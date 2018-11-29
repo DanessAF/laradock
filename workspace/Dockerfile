@@ -369,7 +369,7 @@ RUN if [ ${INSTALL_PHPREDIS} = true ]; then \
 # Swoole EXTENSION
 ###########################################################################
 
-ARG INSTALL_SWOOLE=false
+ARG INSTALL_SWOOLE=true
 
 RUN if [ ${INSTALL_SWOOLE} = true ]; then \
     # Install Php Swoole Extension
@@ -881,6 +881,8 @@ USER root
 RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     rm /var/log/lastlog /var/log/faillog
+
+EXPOSE 9501 9501
 
 # Set default work directory
 WORKDIR /var/www
