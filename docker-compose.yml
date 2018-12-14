@@ -109,6 +109,7 @@ services:
       ports:
         - "${WORKSPACE_SSH_PORT}:22"
         - "9501:9501"
+        - "9502:9502"
         - "9999:9999"
       tty: true
       environment:
